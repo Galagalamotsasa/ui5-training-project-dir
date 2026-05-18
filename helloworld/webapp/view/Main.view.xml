@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="student04.sap.training.helloworld.controller.Main">
+    <Page id="page" title="{i18n>title}">
+    <content>
+        <TextArea xmlns="sap.m" value="Hello world!" rows="4" id="area0"/>
+    </content>
+    </Page>
+</mvc:View>

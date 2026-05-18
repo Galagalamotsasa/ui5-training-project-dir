@@ -1,0 +1,23 @@
+{
+  "generationParameters": {
+    "generationDate": "Mon May 18 2026 04:47:30 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "None",
+    "metadataFilename": "",
+    "serviceUrl": "N/A",
+    "appName": "helloworld",
+    "appTitle": "Hello World App",
+    "appDescription": "Student 04",
+    "appNamespace": "student04.sap.training",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.120.1",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.24.0",
+    "template": "Basic",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}
