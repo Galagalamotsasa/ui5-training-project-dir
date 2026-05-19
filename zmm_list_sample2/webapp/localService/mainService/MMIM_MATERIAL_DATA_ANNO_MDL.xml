@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/mmim_material_data_srv/$metadata">
+        <edmx:Include Namespace="MMIM_MATERIAL_DATA_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="mmim_material_data_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.C_SerialNumbersForGdsMvtVHType/SalesOrder">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.C_SerialNumbersForGdsMvtVHType/SalesOrderItem">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.C_SerialNumbersForGdsMvtVHType/WBSElement">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/BatchIsMarkedForDeletion">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/BatIsMrkdForDeltnInPlnt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/ShelfLifeExpirationDate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/RootBatShelfLifeExprtnDte">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/MaterialExternalID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/AuthorizationGroup">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtMatlMstrVHType/SerialNumberProfile">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/BatchIsMarkedForDeletion">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/BatIsMrkdForDeltnInPlnt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/ShelfLifeExpirationDate">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/RootBatShelfLifeExprtnDte">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/MaterialExternalID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/SupplierBasicAuthorizationGrp">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="MMIM_MATERIAL_DATA_SRV.I_InvtryMgmtSuplrInfoRecdVHType/SerialNumberProfile">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
