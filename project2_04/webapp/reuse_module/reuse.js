@@ -13,6 +13,7 @@ sap.ui.define([
         text: "Press Me",
         press: function () {
             MessageToast.show("Button Pressed!");
+            this.Controller.getRouter().navTo("RouteViewDefine");
         }
     });
     var oText = new Text({

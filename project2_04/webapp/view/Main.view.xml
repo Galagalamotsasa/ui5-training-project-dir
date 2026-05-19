@@ -2,5 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <Button id="button01" text="Press Me(View)" press=".onSayHello"/>
+        <Button id="button02" text="누르면 감당해" press=".onDialogPress"/>
     </Page>
 </mvc:View>
