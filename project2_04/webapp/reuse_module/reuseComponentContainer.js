@@ -14,9 +14,6 @@ sap.ui.define([
         async: true,                        // 비동기로 Component를 로드
         settings: {                         // Component에 전달할 설정값
             id: "com.sap.project204"        // Component의 id (중복 방지)
-        },
-        metadata: {                         // Component의 메타데이터 설정
-            manifest: "json"
         }
     });
     // ComponentContainer를 View에 배치

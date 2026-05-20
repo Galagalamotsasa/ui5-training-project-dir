@@ -1,0 +1,13 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core"
+>
+    <Dialog id="dialog01" title="Dialog Sample" class="sapUiPopupWithPadding">
+        <content>
+            <Text id="dlgText01" text="Hello World! I am Dialog"></Text>
+        </content>
+        <beginButton>
+            <Button id="dlgBtn01" text="OK" press=".onCloseDialog"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,7 @@
+<core:FragmentDefinition id="UIpart"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Text id="frgmt01" text="I am Diana. Lately released Fragmata"></Text>
+
+</core:FragmentDefinition>

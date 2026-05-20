@@ -1,0 +1,11 @@
+{
+    "Form": "Dinosaur",
+    "CustomerName": "Hoit Kim",
+    "Discount": 0.1,
+    "Street": "123 Main St",
+    "PostCode": "12345",
+    "City": "Anytown",
+    "Country": "USA",
+    "Email": "hoit.kim@example.com",
+    "Telephone": "555-1234"
+}

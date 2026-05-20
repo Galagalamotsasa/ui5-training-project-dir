@@ -5,39 +5,45 @@
     xmlns:core="sap.ui.core"
 >
     <App id="defaultApp" > <!-- 화면 이동을 위해서는 최상위 앱 객체가 필요 -->
-        <Button id="button01" text="Press Me(View)" press=".onSayHello"/>
-        <Button id="button02" text="누르면 감당해" press=".onDialogPress"/>
-        <!-- 사용자로 부터 입력을 받는 폼 구성 -->
-        <f:SimpleForm id="simForm">
-            <f:toolbar>
-                <Toolbar id="formToolbar">
-                    <content>
-                        <ToolbarSpacer />
-                        <Button id="button03" text="Create Customer" press=".onButtonPress" icon="sap-icon://add-employee"/>
-                    </content>
-                </Toolbar>
-            </f:toolbar>
+        <Page>
+            <Button id="button01" text="Press Me(View)" press=".onSayHello"/>
+            <Button id="button02" text="누르면 감당해" press=".onDialogPress"/>
 
-            <f:content>
-                <core:Title id="GenData" text="General Data" />
-                    <Label id="GenLabel1" text="Form" />
-                    <Input id="GenInput1" value="" />
-                    <Label id="GenLabel2" text="Customer Number" />
-                    <Input id="GenInput2" value="" />
-                    <Label id="GenLabel3" text="Discount(%)" />
-                    <Input id="GenInput3" value="" />
+            <!-- Fragment 삽입 -->
+            <core:Fragment fragmentName="com.sap.project204.view.UIpart" type="XML"/>
 
-                <core:Title id="AddrData" text="Address Data" />
-                    <Label id="AddrLabel1" text="Street" />
-                    <Input id="AddrInput1" value="" />
-                    <Label id="AddrLabel2" text="Postal Code" />
-                    <Input id="AddrInput2" value="" />
-                    <Label id="AddrLabel3" text="City" />
-                    <Input id="AddrInput3" value="" />
-                    <Label id="AddrLabel4" text="Country" />
-                    <Input id="AddrInput4" value="" />
-            </f:content>
-        </f:SimpleForm>
+            <!-- 사용자로 부터 입력을 받는 폼 구성 -->
+            <f:SimpleForm id="simForm">
+                <f:toolbar>
+                    <Toolbar id="formToolbar">
+                        <content>
+                            <ToolbarSpacer />
+                            <Button id="button03" class="sapUiHideOnPhone" text="Create Customer" press=".onButtonPress" icon="sap-icon://add-employee"/>
+                        </content>
+                    </Toolbar>
+                </f:toolbar>
+
+                <f:content>
+                    <core:Title id="GenData" text="General Data" />
+                        <Label id="GenLabel1" text="Form" />
+                        <Input id="GenInput1" value="{sampleJSONModel>/Form}" />
+                        <Label id="GenLabel2" text="Customer Number" />
+                        <Input id="GenInput2" value="{sampleJSONModel>/CustomerName}" />
+                        <Label id="GenLabel3" text="Discount(%)" />
+                        <Input id="GenInput3" value="{sampleJSONModel>/Discount}" />
+
+                    <core:Title id="AddrData" text="Address Data" />
+                        <Label id="AddrLabel1" text="Street" />
+                        <Input id="AddrInput1" value="{sampleJSONModel>/Street}" />
+                        <Label id="AddrLabel2" text="Postal Code" />
+                        <Input id="AddrInput2" value="{sampleJSONModel>/PostCode}" />
+                        <Label id="AddrLabel3" text="City" />
+                        <Input id="AddrInput3" value="{sampleJSONModel>/City}" />
+                        <Label id="AddrLabel4" text="Country" />
+                        <Input id="AddrInput4" value="{sampleJSONModel>/Country}" showValueHelp="true" valueHelpRequest=".onF4Country" />
+                </f:content>
+            </f:SimpleForm>
+        </Page> <!-- 페이지 객체는 화면 이동 시 필요 -->
         <!-- <pages>
             <Page id="page01" title="{i18n>pageTitle01}">
                 <Button text="Navigate" press=".onNavigate('page02')"/>
