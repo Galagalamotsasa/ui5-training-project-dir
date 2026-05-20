@@ -9,7 +9,7 @@
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
-    "resources": "resources.json",
+    "resources": "resources.json", 
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.24.0",
@@ -89,9 +89,9 @@
       }
     },
     "rootView": {
-      "viewName": "com.sap.project204.view.App",
+      "viewName": "com.sap.project204.view.Main",
       "type": "XML",
-      "id": "App",
+      "id": "idMain",
       "async": true
     }
   }

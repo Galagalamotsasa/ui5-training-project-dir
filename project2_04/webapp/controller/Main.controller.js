@@ -17,7 +17,7 @@ sap.ui.define([
             MessageToast.show("Hello World! Suckers!");
         },
 
-        onDialogPress: function () {
+        onDialogPress() {
 			if (!this.oApproveDialog) {
 				this.oApproveDialog = new Dialog({
 					type: DialogType.Message,
@@ -43,5 +43,14 @@ sap.ui.define([
 
 			this.oApproveDialog.open();
 		},
+
+		onNavigate(to) {
+			// 1. App 객체 취득하기
+			const oApp = this.byId("defaultApp");
+
+			// 2. 화면 이동하기
+			const oPage = this.byId(to || "page02");
+			oApp.to(oPage);
+		}
     });
 });
