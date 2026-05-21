@@ -53,6 +53,7 @@
         }
       }
     },
+    "handleValidation": true,
     "resources": {
       "css": [
         {

@@ -3,6 +3,7 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
+    core:require="{formatter: 'com/sap/project204/model/formatter'}"
 >
     <App id="defaultApp" > <!-- 화면 이동을 위해서는 최상위 앱 객체가 필요 -->
         <Page>
@@ -11,6 +12,50 @@
 
             <!-- Fragment 삽입 -->
             <core:Fragment fragmentName="com.sap.project204.view.UIpart" type="XML"/>
+
+            <!-- 고객 리스트 출력 -->
+            <Table id="customerList" items="{
+                path: '/Customers',
+                sorter: [{ path: 'Country', group: true }, { path: 'CustomerName', descending: true }]
+            }" 
+            growing="true" growingThreshold="3" 
+            mode="SingleSelectLeft" selectionChange=".onSelectionChange"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Customer List"/>
+                        <ToolbarSpacer/>
+                        <SearchField id="searchCustomer" width="20rem" placeholder="Search by Customer Name" liveChange=".onSearchCustomer" search=".onSearchCustomer"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="colForm">
+                        <Text id="txtColForm" text="Form"/>
+                    </Column>
+                    <!-- <Column id="colCountry">
+                        <Text id="txtColCountry" text="Country"/>
+                    </Column> -->
+                    <Column id="colName">
+                        <Text id="txtColName" text="Name"/>
+                    </Column>
+                    <Column id="colDiscount">
+                        <Text id="txtColDiscount" text="Discount"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="cliCustomer" type="Active" press=".onCustomerPress">
+                        <cells>
+                            <Text id="txtCellForm" text="{Form}"/>
+                            <!-- <Text id="txtCellCountry" text="{Country}"/> -->
+                            <Text id="txtCellName" text="{CustomerName}"/>
+                            <Text id="txtCellDiscount" text="{
+                                path: 'Discount',
+                                formatter: 'formatter.formatDiscount'
+                            }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
 
             <!-- 사용자로 부터 입력을 받는 폼 구성 -->
             <f:SimpleForm id="simForm">
@@ -26,21 +71,31 @@
                 <f:content>
                     <core:Title id="GenData" text="General Data" />
                         <Label id="GenLabel1" text="Form" />
-                        <Input id="GenInput1" value="{sampleJSONModel>/Form}" />
+                        <Input id="GenInput1" value="{Form}" />
                         <Label id="GenLabel2" text="Customer Number" />
-                        <Input id="GenInput2" value="{sampleJSONModel>/CustomerName}" />
+                        <Input id="GenInput2" value="{CustomerName}" />
                         <Label id="GenLabel3" text="Discount(%)" />
-                        <Input id="GenInput3" value="{sampleJSONModel>/Discount}" />
+                        <!-- <Input id="GenInput3" value="{Discount}" /> -->
+                        <!-- // 입력값에 대한 제약조건을 설정하여 유효성 검사 수행 -->
+                        <Input id="GenInput3" value="{
+                            path: 'Discount',
+                            type: 'sap.ui.model.type.Float',
+                            constraints: {
+                                min: 0,
+                                max: 1,
+                                decimals: 2
+                            }
+                        }" />
 
                     <core:Title id="AddrData" text="Address Data" />
                         <Label id="AddrLabel1" text="Street" />
-                        <Input id="AddrInput1" value="{sampleJSONModel>/Street}" />
+                        <Input id="AddrInput1" value="{Street}" />
                         <Label id="AddrLabel2" text="Postal Code" />
-                        <Input id="AddrInput2" value="{sampleJSONModel>/PostCode}" />
+                        <Input id="AddrInput2" value="{PostCode}" />
                         <Label id="AddrLabel3" text="City" />
-                        <Input id="AddrInput3" value="{sampleJSONModel>/City}" />
+                        <Input id="AddrInput3" value="{City}" />
                         <Label id="AddrLabel4" text="Country" />
-                        <Input id="AddrInput4" value="{sampleJSONModel>/Country}" showValueHelp="true" valueHelpRequest=".onF4Country" />
+                        <Input id="AddrInput4" value="{Country}" showValueHelp="true" valueHelpRequest=".onF4Country" />
                 </f:content>
             </f:SimpleForm>
         </Page> <!-- 페이지 객체는 화면 이동 시 필요 -->

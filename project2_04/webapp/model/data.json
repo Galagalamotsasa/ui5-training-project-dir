@@ -1,11 +1,115 @@
 {
-    "Form": "Dinosaur",
-    "CustomerName": "Hoit Kim",
-    "Discount": 0.1,
-    "Street": "123 Main St",
-    "PostCode": "12345",
-    "City": "Anytown",
-    "Country": "USA",
-    "Email": "hoit.kim@example.com",
-    "Telephone": "555-1234"
+    "Customers": [
+        {
+            "Form": "Dinosaur",
+            "CustomerName": "Dooly Kim",
+            "Discount": 0.15,
+            "Street": "100 Ice Valley Rd",
+            "PostCode": "04501",
+            "City": "Ssangmun-dong",
+            "Country": "Korea",
+            "Email": "dooly.babyrex@example.com",
+            "Telephone": "010-1000-0001"
+        },
+        {
+            "Form": "Alien",
+            "CustomerName": "Douner Park",
+            "Discount": 0.08,
+            "Street": "22 Alien Planet Ave",
+            "PostCode": "04502",
+            "City": "Unknown",
+            "Country": "Cantapiya",
+            "Email": "douner.space@example.com",
+            "Telephone": "010-1000-0002"
+        },
+        {
+            "Form": "Animal",
+            "CustomerName": "Dochi Lee",
+            "Discount": 0.12,
+            "Street": "77 Bubble Forest",
+            "PostCode": "04503",
+            "City": "Incheon",
+            "Country": "Korea",
+            "Email": "dochi.friend@example.com",
+            "Telephone": "010-1000-0003"
+        },
+        {
+            "Form": "Human",
+            "CustomerName": "Go Gil-dong",
+            "Discount": 0.03,
+            "Street": "12 Angry Dad Street",
+            "PostCode": "04504",
+            "City": "Bucheon",
+            "Country": "Korea",
+            "Email": "gildong.house@example.com",
+            "Telephone": "010-1000-0004"
+        },
+        {
+            "Form": "Human",
+            "CustomerName": "Heedong Kim",
+            "Discount": 0.05,
+            "Street": "55 Homework Alley",
+            "PostCode": "04505",
+            "City": "Suwon",
+            "Country": "Korea",
+            "Email": "heedong.student@example.com",
+            "Telephone": "010-1000-0005"
+        },
+        {
+            "Form": "Black",
+            "CustomerName": "Michol Hong",
+            "Discount": 0.2,
+            "Street": "999 Future Tower",
+            "PostCode": "04506",
+            "City": "Texas",
+            "Country": "USA",
+            "Email": "michol.future@example.com",
+            "Telephone": "010-1000-0006"
+        },
+        {
+            "Form": "Dinosaur",
+            "CustomerName": "Baby Dino Dooly",
+            "Discount": 0.18,
+            "Street": "88 Glacier Cave",
+            "PostCode": "04507",
+            "City": "Gangneung",
+            "Country": "Korea",
+            "Email": "babydino@example.com",
+            "Telephone": "010-1000-0007"
+        },
+        {
+            "Form": "Alien",
+            "CustomerName": "Dorothy",
+            "Discount": 0.11,
+            "Street": "404 UFO Station",
+            "PostCode": "04508",
+            "City": "Unknown",
+            "Country": "Cantapiya",
+            "Email": "dorothy.alien@example.com",
+            "Telephone": "010-1000-0008"
+        },
+        {
+            "Form": "Animal",
+            "CustomerName": "Dochi Rabbit",
+            "Discount": 0.09,
+            "Street": "7 Carrot Hill",
+            "PostCode": "04509",
+            "City": "Jeju",
+            "Country": "Korea",
+            "Email": "dochi.rabbit@example.com",
+            "Telephone": "010-1000-0009"
+        },
+        {
+            "Form": "Human",
+            "CustomerName": "Mr. Go",
+            "Discount": 0.02,
+            "Street": "321 Stress Road",
+            "PostCode": "04510",
+            "City": "Daegu",
+            "Country": "Korea",
+            "Email": "mrgo.office@example.com",
+            "Telephone": "010-1000-0010"
+        }
+    ]
 }
+
