@@ -23,7 +23,7 @@ sap.ui.define([// 의존성 모듈 나열
 			// 3. JSON 모델 생성 및 데이터 바인딩
 			var sPath = sap.ui.require.toUrl("com/sap/project204/model/data.json"); // JSON 파일의 경로
 			var oJSONModel = new JSONModel(sPath); // JSON 파일에서 데이터 로드
-			this.getView().setModel(oJSONModel); // 모델을 View에 설정
+			this.getView().setModel(oJSONModel, "ui"); // 모델을 ui라는 별칭으로 View에 설정
         },
 
         onSayHello() { // Event Handler for Button Press
@@ -116,6 +116,38 @@ sap.ui.define([// 의존성 모듈 나열
 
 			// 4. 필터 적용하기
 			oBinding.filter(aFilters);
+		},
+
+		onButtonPress() {
+			// 1. getValue()로 직접 읽기 (컨텍스트 없어도 동작)
+			const sForm = this.byId("GenInput1").getValue();
+			const sName = this.byId("GenInput2").getValue();
+			const sStreet = this.byId("AddrInput1").getValue();
+			const sPostCode = this.byId("AddrInput2").getValue();
+			const sCity = this.byId("AddrInput3").getValue();
+			const sCountry = this.byId("AddrInput4").getValue();
+
+			// 2. 값 확인 (디버깅용)
+			console.log("CustomerName:", sName, "Form:", sForm);
+
+			var oDataModel = this.getView().getModel();
+			oDataModel.createEntry("/UX_Customer", {
+				properties: {           // ← properties 키 필수
+					CustomerName: sName,
+					Form: sForm,
+					Street: sStreet,
+					PostCode: sPostCode,
+					City: sCity,
+					Country: sCountry
+				}
+			});
+
+			oDataModel.submitChanges({
+				success: () => MessageToast.show("고객 생성 성공!"),
+				error: () => MessageToast.show("고객 생성 실패.")
+			});
+			
+			// MessageToast.show(`Hello ${sName}!`);
 		}
     });
 });

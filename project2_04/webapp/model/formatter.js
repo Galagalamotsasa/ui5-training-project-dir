@@ -8,7 +8,8 @@ sap.ui.define([
             if (discount == 0 || discount == null || discount == undefined) {
                 return "No Discount";
             } else {
-                return `${discount*100}%`;
+                // return `${discount*100}%`;
+                return `${discount}%`;
             }
         }
     }

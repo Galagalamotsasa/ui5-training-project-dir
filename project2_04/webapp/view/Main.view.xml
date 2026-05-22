@@ -8,14 +8,14 @@
     <App id="defaultApp" > <!-- 화면 이동을 위해서는 최상위 앱 객체가 필요 -->
         <Page>
             <Button id="button01" text="Press Me(View)" press=".onSayHello"/>
-            <Button id="button02" text="누르면 감당해" press=".onDialogPress"/>
+            <Button id="button02" text="{i18n>buttonText}" press=".onDialogPress"/>
 
             <!-- Fragment 삽입 -->
             <core:Fragment fragmentName="com.sap.project204.view.UIpart" type="XML"/>
 
             <!-- 고객 리스트 출력 -->
             <Table id="customerList" items="{
-                path: '/Customers',
+                path: '/UX_Customer',
                 sorter: [{ path: 'Country', group: true }, { path: 'CustomerName', descending: true }]
             }" 
             growing="true" growingThreshold="3" 
@@ -23,9 +23,9 @@
             >
                 <headerToolbar>
                     <Toolbar>
-                        <Title text="Customer List"/>
+                        <Title text="{i18n>customerListTitle}"/>
                         <ToolbarSpacer/>
-                        <SearchField id="searchCustomer" width="20rem" placeholder="Search by Customer Name" liveChange=".onSearchCustomer" search=".onSearchCustomer"/>
+                        <SearchField id="searchCustomer" width="20rem" placeholder="{i18n>searchPlaceholder}" liveChange=".onSearchCustomer" search=".onSearchCustomer"/>
                     </Toolbar>
                 </headerToolbar>
                 <columns>
@@ -72,7 +72,7 @@
                     <core:Title id="GenData" text="General Data" />
                         <Label id="GenLabel1" text="Form" />
                         <Input id="GenInput1" value="{Form}" />
-                        <Label id="GenLabel2" text="Customer Number" />
+                        <Label id="GenLabel2" text="Customer Name" />
                         <Input id="GenInput2" value="{CustomerName}" />
                         <Label id="GenLabel3" text="Discount(%)" />
                         <!-- <Input id="GenInput3" value="{Discount}" /> -->

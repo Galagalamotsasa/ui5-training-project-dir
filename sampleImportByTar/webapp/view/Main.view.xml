@@ -1,0 +1,31 @@
+<mvc:View controllerName="projectsicf.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+
+    xmlns:unified="sap.ui.unified"
+    
+    xmlns="sap.m">
+
+    
+    <Page id="page" title="{i18n>title}">
+        <Panel headerText="File Upload">
+            <content>
+                <unified:FileUploader id="fileUploader" name="myFileUploader" 
+                                        fileType="png,jpeg,jpg"
+                                        uploadUrl="/sap/bc/aidoc/documents/job"  
+                                        width="500px"
+                                        placeholder="choolse File (Maximum 1M)"
+                                        uploadComplete=".onFileUploadComplete"/>  
+
+                <Button text="Call Post" press=".callPost"/>
+            </content>
+        </Panel>
+
+        <Panel headerText="Parse File">
+            <content>
+                <Input id="docid" value=""/>
+                <Button text="Call Get" press=".callGet"/>        
+            </content>
+        </Panel>
+
+    </Page>
+</mvc:View>

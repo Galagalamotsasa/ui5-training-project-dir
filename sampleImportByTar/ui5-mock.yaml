@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
 
-specVersion: "4.0"
+specVersion: "3.1"
 metadata:
-  name: com.sap.project204
+  name: projectsicf
 type: application
 server:
   customMiddleware:
@@ -16,10 +16,9 @@ server:
             - /test-resources
           url: https://ui5.sap.com
         backend:
-          - path: /sap # 모든 OData 서비스가 있는 경로
-            url: http://61.97.134.35:8000
-            client: '100'
-            destination: Gateway
+          - path: /sap
+            url: https://efx_100.dest
+            destination: EFX_100
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -31,3 +30,15 @@ server:
       configuration:
         flp:
           theme: sap_horizon
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/UX_TRAVEL_SRV
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations:
+          - localPath: ./webapp/localService/mainService/UX_TRAVEL_ANNO_MDL.xml
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='UX_TRAVEL_ANNO_MDL',Version='0001')/$value/

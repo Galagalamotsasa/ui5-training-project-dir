@@ -1,7 +1,7 @@
 {
   "_version": "1.60.0",
   "sap.app": {
-    "id": "com.sap.project204",
+    "id": "projectsicf",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -9,17 +9,28 @@
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
-    "resources": "resources.json", 
+    "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.24.0",
-      "toolsId": "067f1afa-ca79-4792-987b-fd25278cc975"
+      "version": "1.19.3",
+      "toolsId": "cca00c0f-f7a0-4bc4-822c-9efecbb5dcd6"
     },
     "dataSources": {
+      "UX_TRAVEL_ANNO_MDL": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='UX_TRAVEL_ANNO_MDL',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/UX_TRAVEL_ANNO_MDL.xml"
+        }
+      },
       "mainService": {
-        "uri": "/sap/opu/odata/sap/UX_UI_CUSTOMER_O2/",
+        "uri": "/sap/opu/odata/sap/UX_TRAVEL_SRV/",
         "type": "OData",
         "settings": {
+          "annotations": [
+            "UX_TRAVEL_ANNO_MDL"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "2.0"
         }
       }
@@ -58,17 +69,15 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.sap.project204.i18n.i18n"
+          "bundleName": "projectsicf.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
-        "settings": {
-          "useBatch": false
-        }
+        "preload": true,
+        "settings": {}
       }
     },
-    "handleValidation": true,
     "resources": {
       "css": [
         {
@@ -84,9 +93,9 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "com.sap.project204.view",
+        "path": "projectsicf.view",
         "async": true,
-        "viewPath": "com.sap.project204.view"
+        "viewPath": "projectsicf.view"
       },
       "routes": [
         {
@@ -105,9 +114,9 @@
       }
     },
     "rootView": {
-      "viewName": "com.sap.project204.view.Main",
+      "viewName": "projectsicf.view.App",
       "type": "XML",
-      "id": "idMain",
+      "id": "App",
       "async": true
     }
   }
