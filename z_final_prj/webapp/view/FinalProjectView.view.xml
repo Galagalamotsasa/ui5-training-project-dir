@@ -1,0 +1,81 @@
+<mvc:View controllerName="com.sap.ux01.zfinalprj.controller.FinalProjectView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <App id="defaultApp">
+        <Page id="page01" title="{i18n>pageTitle01}">
+            <!-- 고객 리스트 출력 -->
+            <Table id="customerList" items="{
+                    path: '/UX_Customer',
+                    sorter: [{ path: 'Country', group: true }, { path: 'CustomerName', descending: true }]
+                }" 
+                growing="true" growingThreshold="3" 
+                mode="SingleSelectLeft" selectionChange=".onSelectionChange"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>customerListTitle}"/>
+                        <ToolbarSpacer/>
+                        <SearchField id="searchCustomer" width="20rem" placeholder="{i18n>searchPlaceholder}" liveChange=".onSearchCustomer" search=".onSearchCustomer"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="colForm">
+                        <Text id="txtColForm" text="Form"/>
+                    </Column>
+                    <Column id="colName">
+                        <Text id="txtColName" text="Name"/>
+                    </Column>
+                    <Column id="colDiscount">
+                        <Text id="txtColDiscount" text="Discount(%)"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="cliCustomer" type="Active" press=".onSearchCustomer">
+                        <cells>
+                            <Text id="txtCellForm" text="{Form}"/>
+                            <Text id="txtCellName" text="{CustomerName}"/>
+                            <Text id="txtCellDiscount" text="{= ${Discount} + '%' }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <!-- 사용자로 부터 입력을 받는 폼 구성 -->
+            <f:SimpleForm id="simForm">
+                <f:toolbar>
+                    <Toolbar id="formToolbar">
+                        <content>
+                            <ToolbarSpacer />
+                            <Button id="button03" class="sapUiHideOnPhone" text="Create Customer" press=".onButtonPress" icon="sap-icon://add-employee"/>
+                            <Button id="upload" class="sapUiHideOnPhone" text="Upload Business Card" press=".onUploadBusinessCard" icon="sap-icon://upload"/>
+                        </content>
+                    </Toolbar>
+                </f:toolbar>
+
+                <f:content>
+                    <core:Title id="GenData" text="General Data" />
+                        <Label id="GenLabel1" text="Form" />
+                        <Input id="GenInput1" value="{Form}" />
+                        <Label id="GenLabel2" text="Customer Name" />
+                        <Input id="GenInput2" value="{CustomerName}" />
+                        <Label id="GenLabel3" text="Discount(%)" />
+                        <Input id="GenInput3" value="{
+                            path: 'Discount'
+                        }" />
+                    <core:Title id="AddrData" text="Address Data" />
+                        <Label id="AddrLabel1" text="Street" />
+                        <Input id="AddrInput1" value="{Street}" />
+                        <Label id="AddrLabel2" text="Postal Code" />
+                        <Input id="AddrInput2" value="{PostCode}" />
+                        <Label id="AddrLabel3" text="City" />
+                        <Input id="AddrInput3" value="{City}" />
+                        <Label id="AddrLabel4" text="Country" />
+                        <Input id="AddrInput4" value="{Country}" showValueHelp="true" valueHelpRequest=".onF4Country" />
+                </f:content>
+            </f:SimpleForm>
+        </Page> <!-- 페이지 객체는 화면 이동 시 필요 -->
+    </App>
+</mvc:View>

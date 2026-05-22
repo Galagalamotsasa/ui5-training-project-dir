@@ -33,9 +33,9 @@ sap.ui.define([
             oFileUploader.upload();
         },
 
-        onFileUploadComplete: function(oEvent) {            
+        onFileUploadComplete: function(oEvent) {
             var oJSON = JSON.parse(oEvent.getParameter("response"));
             MessageToast.show(oJSON.docid);
-        }     
+        }
     });
 });

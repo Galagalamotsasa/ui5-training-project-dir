@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified">
+
+    <Dialog
+        title="{i18n>uploadDialogTitle}"
+        contentWidth="400px">
+        <content>
+            <VBox class="sapUiSmallMargin" alignItems="Center">
+                <u:FileUploader
+                    id="imageUploader"
+                    name="imageUploader"
+                    uploadUrl="/sap/bc/aidoc/documents/job"
+                    tooltip="Upload Image"
+                    fileType="jpg,jpeg,png,gif,bmp"
+                    mimeType="image/jpeg,image/png,image/gif,image/bmp"
+                    buttonText="Browse Image"
+                    width="100%"
+                    sendXHR="true"
+                    multiple="false"
+                    change="onFileChange"
+                    placeholder="{i18n>fileUploaderPlaceholder}"
+                    uploadComplete="onUploadComplete"
+                    />
+                <Image
+                    id="previewImage"
+                    src=""
+                    width="300px"
+                    visible="false"
+                    class="sapUiSmallMarginTop"/>
+                <Label text="docid : "></Label>
+                <Text id="docid"></Text>
+            </VBox>
+        </content>
+        <buttons>
+            <Button
+                text="{i18n>uploadButtonText}"
+                type="Emphasized"
+                press="onUploadImage"/>
+            <Button text="{i18n>saveButtonText}" press="onSaveDocument"/>
+            <Button
+                text="{i18n>cancelButtonText}"
+                press="onCloseDialog"/>
+        </buttons>
+    </Dialog>
+
+</core:FragmentDefinition>
